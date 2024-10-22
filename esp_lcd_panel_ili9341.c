@@ -389,6 +389,9 @@ static esp_err_t panel_ili9341_disp_on_off(esp_lcd_panel_t *panel, bool on_off)
     ili9341_panel_t *ili9341 = __containerof(panel, ili9341_panel_t, base);
     esp_lcd_panel_io_handle_t io = ili9341->io;
     int command = 0;
+#if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0)
+    on_off=!on_off;
+#endif
     if (on_off)
     {
         command = LCD_CMD_DISPON;
