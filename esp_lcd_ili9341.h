@@ -15,11 +15,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+#define ESP_LCD_ILI9341_VER_MAJOR 0
+#define ESP_LCD_ILI9341_VER_MINOR 4
+#define ESP_LCD_ILI9341_VER_PATCH 1
 /**
  * @brief LCD panel initialization commands.
  *
  */
+
 typedef struct {
     int cmd;                /*<! The specific LCD command */
     const void *data;       /*<! Buffer that holds the command specific data */
